@@ -7,6 +7,9 @@ RUN         apt update \
 RUN         dpkg --add-architecture i386 \
             && apt update \
             && apt upgrade -y \
+			&& apt install wine -y \
+			&& apt install wine32 -y \
+			&& apt install libwine -y \
             && apt install -y libstdc++6 lib32stdc++6 tar curl iproute2 openssl fontconfig dirmngr ca-certificates dnsutils tzdata zip  \
             && apt install -y libtbb2:i386 libtbb-dev:i386 libicu-dev:i386  \
             && useradd -d /home/container -m container
